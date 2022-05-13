@@ -1,5 +1,7 @@
 # Todo App Web
 
+Deployed Live [Here](https://pushpendersaini0.github.io/todo-app-web/)
+
 This is a simple todo app made for an assignment by MSS Rainbow for web development internship.
 
 The app is made using HTML, CSS and JS without using any external libraries.
