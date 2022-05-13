@@ -28,11 +28,11 @@ const showTask = () => {
         if (showType.value == 'completed' && !task.isComplete)
             continue;
         html += `
-                <div class="task">
+                <div class="flex-center task">
                     <input onclick="checkBoxHandler(event)" type="checkbox" id="checkbox-${task.tid}"${ck}>
                     <p>${strikeStart}${task.title}${strikeEnd}</p>
                     <p>${new Date(task.date).toDateString()}</p>
-                    <button onclick="deletebtnHandler(event)" id="deletebtn-${task.tid}">Delete Task</button>
+                    <button class="danger" onclick="deletebtnHandler(event)" id="deletebtn-${task.tid}">Delete Task</button>
                 </div>
             `;
     }
@@ -74,6 +74,8 @@ const btnClickHandler = () => {
 
     // Reset input field and btn
     taskBoxTitle.value = "";
+    taskBtn.classList.remove("enabled");
+    taskBtn.classList.add("disabled");
     taskBtn.disabled = true;
 
     showTask();
@@ -82,8 +84,18 @@ const btnClickHandler = () => {
 
 // Enable "Add Task" btn only when input has some text
 const updateTaskBtn = (e) => {
-    if (e.target.value.length == 0) taskBtn.disabled = true;
-    else taskBtn.disabled = false;
+    if (e.target.value.length == 0) {
+        taskBtn.classList.remove("enabled");
+        taskBtn.classList.add("disabled");
+        taskBtn.disabled = true;
+    }
+
+    else {
+        taskBtn.classList.remove("disabled");
+        taskBtn.classList.add("enabled");
+        taskBtn.disabled = false;
+    }
+
 }
 
 
@@ -99,4 +111,4 @@ window.addEventListener("beforeunload", () => {
     localStorage.setItem("todoAppData", JSON.stringify(todoAppData));
 });
 
-if(todoAppData.length != 0) showTask();
+showTask();
