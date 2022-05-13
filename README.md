@@ -23,3 +23,5 @@ In this app you can
 -   Task are saved in local storage so reloading tab / browser will not delete all previous tasks
 -   A progress bar keeps track of task completed / total task
 - App is made responsive and has a nice dark theme
+
+![image](https://user-images.githubusercontent.com/54404738/168343019-0bc139fc-463e-469c-b660-d588852bdfe0.png)
