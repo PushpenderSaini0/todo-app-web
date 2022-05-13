@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>TODO APP</title>
+        <link rel="icon" href="./favicon.ico" type="image/vnd.microsoft.icon" sizes="48x48"> 
         <link rel="stylesheet" href="./css/main.css" />
         <script src="./js/main.js" defer></script>
     </head>
@@ -11,15 +12,19 @@
         <div>
             <h1>TODO APP</h1>
         </div>
+
         <div>
-            <input type="text" />
-            <button>Add Task</button>
+            <input type="text" id="new-task-box-title" placeholder="Task title"/>
+            <input type="date" id="new-task-box-date">
+            <button id="new-task-btn">Add Task</button>
         </div>
+
         <div>
-            <label for="task-done-pbar">Progress</label>
-            <progress id="task-done-pbar" value="32" max="100"></progress>
-            <span> 1 of 4 task completed</span>
+            <label for="pbar">Progress</label>
+            <progress id="pbar" value="0" max="100"></progress>
+            <span id="pbar-text"></span>
         </div>
+
         <div>
             <label for="show-type">Show:</label>
             <select name="show-type" id="show-type">
@@ -29,24 +34,8 @@
             </select>
         </div>
 
-        <div>
-            <table>
-                <tr>
-                    <th></th>
-                    <th>Task</th>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="checkbox" />
-                    </td>
-                    <td>
-                        <div>
-                            <h2>Title</h2>
-                            <p>Friday, 13 May 2022</p>
-                        </div>
-                    </td>
-                </tr>
-            </table>
+        <div id="task-list">
+            NO TASK
         </div>
     </body>
 </html>
